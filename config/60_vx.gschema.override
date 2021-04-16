@@ -1,0 +1,5 @@
+[org.gnome.settings-daemon.plugins.power]
+idle-dim=false
+
+[org.gnome.desktop.session]
+idle-delay=0

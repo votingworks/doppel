@@ -1,0 +1,10 @@
+/build
+/codemods
+/coverage
+/cypress/plugins
+/cypress/integration/examples
+/cypress/support
+/prodserver/**/*.js
+/src/**/*.js
+/script/**/*.js
+/.eslintrc.js

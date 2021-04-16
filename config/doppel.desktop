@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=gnome-terminal --full-screen --hide-menubar -- node /vx/doppel
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_NG]=VotingWorks Doppel
+Name=VotingWorks Doppel
+Comment[en_NG]=Clone and restore machine images.
+Comment=Clone and restore machine images.
