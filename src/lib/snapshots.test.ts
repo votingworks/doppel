@@ -109,3 +109,11 @@ test('getSnapshots sorts by machine type followed by code version (recent first)
     },
   ])
 })
+
+test('returns nothing if there are no user-mounted media volumes', async () => {
+  readdirMock
+    .mockRejectedValue(new Error('no mock setup'))
+    .mockRejectedValueOnce(new Error('ENOENT'))
+
+  expect(await getSnapshots()).toEqual([])
+})
