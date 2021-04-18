@@ -2,7 +2,7 @@ import { render } from 'ink-testing-library'
 import React from 'react'
 import App from './App'
 import useSnapshots from './hooks/useSnapshots'
-import { waitForHooks } from '../test/utils'
+import { fakeSnapshot, waitForHooks } from '../test/utils'
 import stripAnsi from 'strip-ansi'
 
 jest.mock('./hooks/useSnapshots')
@@ -19,12 +19,7 @@ test('renders', () => {
 
 test('shows the selected snapshot', async () => {
   useSnapshotsMock.mockReturnValue([
-    {
-      path: '/media/ubuntu/2021.04.17-abcdef0123-bmd.iso.gz',
-      machineType: 'bmd',
-      codeVersion: '2021.04.17-abcdef0123',
-      preferred: false,
-    },
+    fakeSnapshot({ machineType: 'bmd', codeVersion: '2021.04.17-abcdef0123' }),
   ])
 
   const { lastFrame, rerender, stdin, unmount } = render(<App />)
