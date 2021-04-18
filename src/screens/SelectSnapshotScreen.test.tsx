@@ -44,12 +44,14 @@ test('shows a prompt to select one of the loaded snapshots', async () => {
         '/media/usb-drive/snapshots/2021.04.19-abcdef0123-election-manager.iso.gz',
       machineType: 'election-manager',
       codeVersion: '2021.04.19-abcdef0123',
+      preferred: false,
     },
     {
       path:
         '/media/usb-drive/snapshots/2021.04.19-abcdef0123-ballot-scanner.iso.gz',
       machineType: 'ballot-scanner',
       codeVersion: '2021.04.19-abcdef0123',
+      preferred: false,
     },
   ])
 
@@ -73,5 +75,6 @@ test('shows a prompt to select one of the loaded snapshots', async () => {
       '/media/usb-drive/snapshots/2021.04.19-abcdef0123-election-manager.iso.gz',
     machineType: 'election-manager',
     codeVersion: '2021.04.19-abcdef0123',
+    preferred: false,
   })
 })

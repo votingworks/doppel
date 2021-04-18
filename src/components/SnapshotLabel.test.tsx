@@ -10,6 +10,7 @@ test('displays the machine type and code version', () => {
         path: '/media/ubuntu/2021.04.17-abcdef0123-bmd.iso.gz',
         machineType: 'bmd',
         codeVersion: '2021.04.17-abcdef0123',
+        preferred: false,
       }}
     />
   )
@@ -27,6 +28,7 @@ test('displays the code tag if present', () => {
         machineType: 'bmd',
         codeVersion: '2021.04.17-abcdef0123',
         codeTag: 'm11',
+        preferred: false,
       }}
     />
   )

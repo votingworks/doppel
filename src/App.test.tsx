@@ -23,6 +23,7 @@ test('shows the selected snapshot', async () => {
       path: '/media/ubuntu/2021.04.17-abcdef0123-bmd.iso.gz',
       machineType: 'bmd',
       codeVersion: '2021.04.17-abcdef0123',
+      preferred: false,
     },
   ])
 
