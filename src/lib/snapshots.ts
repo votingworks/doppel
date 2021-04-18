@@ -35,6 +35,8 @@ async function getSystemMachineType(): Promise<MachineType | undefined> {
   if (manufacturer === 'LENOVO' && model === '81SS') {
     return 'bmd'
   }
+
+  return undefined
 }
 
 export async function getSnapshots({
@@ -57,7 +59,7 @@ export async function getSnapshots({
       const snapshotMatch = snapshotPathEntry.match(SNAPSHOT_FILENAME_PATTERN)
 
       if (snapshotMatch) {
-        const codeVersion = snapshotMatch[1]
+        const codeVersion = snapshotMatch[1] as string
         const machineType = snapshotMatch[2] as MachineType
         const codeTag = snapshotMatch[3]
 
