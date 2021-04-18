@@ -14,15 +14,11 @@ const useSnapshots = ({ interval = 10 }: Props = {}):
   | undefined => {
   const [snapshots, setSnapshots] = useState<Snapshot[]>()
 
-  // console.log('setup useEffect')
   useEffect(() => {
-    // console.log('in useEffect')
     let unmounted = false
 
     const timeout = setInterval(async () => {
-      // console.log('calling getSnapshots')
       const snapshots = await getSnapshots()
-      // console.log('getSnapshots returned', snapshots)
 
       if (unmounted) {
         return
@@ -32,7 +28,6 @@ const useSnapshots = ({ interval = 10 }: Props = {}):
     }, interval)
 
     return () => {
-      // console.log('cleanup useEffect')
       unmounted = true
       clearInterval(timeout)
     }
