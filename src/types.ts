@@ -11,6 +11,7 @@ export interface Snapshot {
   machineType: MachineType
   codeVersion: string
   codeTag?: string
+  preferred: boolean
 }
 
 export type NonEmptyArray<T> = readonly [T, ...T[]]
