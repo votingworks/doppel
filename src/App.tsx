@@ -1,7 +1,6 @@
-import { Text } from 'ink'
 import React, { useState } from 'react'
 import Banner from './components/Banner'
-import SnapshotLabel from './components/SnapshotLabel'
+import RestoreSnapshotScreen from './screens/RestoreSnapshotScreen'
 import SelectSnapshotScreen from './screens/SelectSnapshotScreen'
 import { Snapshot } from './types'
 
@@ -14,15 +13,10 @@ const App: React.FC = () => {
   return (
     <React.Fragment>
       <Banner />
-      {!snapshot && <SelectSnapshotScreen onSnapshotSelected={setSnapshot} />}
-      {snapshot && (
-        <Text>
-          Restoring snapshot{' '}
-          <Text color="cyan">
-            <SnapshotLabel snapshot={snapshot} />
-          </Text>
-          …
-        </Text>
+      {!snapshot ? (
+        <SelectSnapshotScreen onSnapshotSelected={setSnapshot} />
+      ) : (
+        <RestoreSnapshotScreen snapshot={snapshot} />
       )}
     </React.Fragment>
   )
