@@ -7,7 +7,7 @@ export interface Props {
 }
 
 /**
- * Returns the current list of available snapshots.
+ * Returns a live list of available snapshots.
  */
 const useSnapshots = ({ interval = 10 }: Props = {}):
   | Snapshot[]

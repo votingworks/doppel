@@ -9,6 +9,10 @@ export interface Props {
   onSnapshotSelected(snapshot: Snapshot): void
 }
 
+/**
+ * This screen allows the user to choose a snapshot, showing hints in the event
+ * their expected snapshot is not present.
+ */
 const SelectSnapshotScreen: React.FC<Props> = ({ onSnapshotSelected }) => {
   const allSnapshots = useSnapshots()
 
