@@ -10,6 +10,9 @@ __    __         __     _                __      __                __
                                /____/
 `.trim()
 
+/**
+ * Renders a VotingWorks banner in VotingWorks color.
+ */
 const Banner: React.FC = () => <Text color="#694A9E">{BANNER}</Text>
 
 export default Banner

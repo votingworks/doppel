@@ -5,6 +5,9 @@ import SnapshotLabel from './components/SnapshotLabel'
 import SelectSnapshotScreen from './screens/SelectSnapshotScreen'
 import { Snapshot } from './types'
 
+/**
+ * Application entry point; handles selecting and restoring a snapshot.
+ */
 const App: React.FC = () => {
   const [snapshot, setSnapshot] = useState<Snapshot>()
 
