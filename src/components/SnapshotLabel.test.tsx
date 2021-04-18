@@ -1,17 +1,16 @@
 import { render } from 'ink-testing-library'
 import React from 'react'
 import stripAnsi from 'strip-ansi'
+import { fakeSnapshot } from '../../test/utils'
 import SnapshotLabel from './SnapshotLabel'
 
 test('displays the machine type and code version', () => {
   const { lastFrame } = render(
     <SnapshotLabel
-      snapshot={{
-        path: '/media/ubuntu/2021.04.17-abcdef0123-bmd.iso.gz',
+      snapshot={fakeSnapshot({
         machineType: 'bmd',
         codeVersion: '2021.04.17-abcdef0123',
-        preferred: false,
-      }}
+      })}
     />
   )
 
@@ -23,13 +22,11 @@ test('displays the machine type and code version', () => {
 test('displays the code tag if present', () => {
   const { lastFrame } = render(
     <SnapshotLabel
-      snapshot={{
-        path: '/media/ubuntu/2021.04.17-abcdef0123-bmd.iso.gz',
+      snapshot={fakeSnapshot({
         machineType: 'bmd',
         codeVersion: '2021.04.17-abcdef0123',
         codeTag: 'm11',
-        preferred: false,
-      }}
+      })}
     />
   )
 

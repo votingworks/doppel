@@ -1,5 +1,6 @@
 import delay from 'delay'
 import { Systeminformation } from 'systeminformation'
+import { Snapshot } from '../src/types'
 
 export async function waitForHooks(): Promise<void> {
   await delay(0)
@@ -22,5 +23,23 @@ export function fakeSystem({
     sku,
     uuid,
     virtual,
+  }
+}
+
+export function fakeSnapshot({
+  codeTag,
+  codeVersion = '2021.04.15-abcdef0123',
+  machineType = 'election-manager',
+  path = `/media/user/${codeVersion}-${machineType}${
+    codeTag ? `-${codeTag}` : ''
+  }.iso.gz`,
+  preferred = false,
+}: Partial<Snapshot> = {}): Snapshot {
+  return {
+    codeTag,
+    codeVersion,
+    machineType,
+    path,
+    preferred,
   }
 }
