@@ -29,7 +29,9 @@ function compareMachineTypes(
   b: MachineType,
   systemMachineType?: MachineType
 ): number {
-  if (a === systemMachineType) {
+  if (a === b) {
+    return 0
+  } else if (a === systemMachineType) {
     return -1
   } else if (b === systemMachineType) {
     return 1
