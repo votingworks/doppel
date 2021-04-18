@@ -5,6 +5,7 @@
   "description": "Clone and restore machine images",
   "scripts": {
     "build": "tsc",
+    "build:watch": "tsc --watch",
     "lint": "eslint src test",
     "test": "jest",
     "test:coverage": "jest --coverage",
